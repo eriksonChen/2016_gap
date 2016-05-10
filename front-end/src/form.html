@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" ng-app="formApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>這個夏天和Gap一起放肆玩</title>
+    <!-- facebook share -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="這個夏天和Gap一起放肆玩" />
+    <meta property="og:description" content="不只要好玩，Gap要你這個夏天玩得「很好看」！現在看夏日穿搭送你治裝優惠，分享活動再抽飯店住宿券。你說這麼好康怎麼能不參加！" />
+    <meta property="og:image" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="icon" href="img/favicon.ico">
+    <!-- css style -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
+    <script src="js/vendor/jquery/jquery-1.11.0.min.js"></script>
+    <script src="js/formPage.js"></script>
+    <script src="js/ga.js"></script>
+</head>
+
+<body ng-controller="formCtrl">
+    <div class="logo">
+        <a href="/"><img src="asset/svg/logo.svg" width="60" alt=""></a>
+    </div>
+    <div class="form">
+        <p><span>抽</span>住宿</p>
+        <div class="data">
+            <span>姓名</span><input name="myname" type="text" ng-model="name" />
+            <span>手機</span><input name="tel" input type="tel" ng-model="phone" maxlength="10" />
+            <span>Email</span><input name="email" type="email" ng-model="email" />
+            <div class="agree"><label for="checkbox"><input type="checkbox" name="checkbox" id="checkbox" class="checkbox" ng-model="ischeck"/>我要參加活動，並已詳閱及同意活動規則，且同意上述資料作為本次抽獎使用。</label></div>
+            <a href="javascript:;" class="btn" ng-click="sendBtn()">完成</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+// for whole width & height
+body{
+	-webkit-font-smoothing: antialiased;
+	font-size: 16px;
+	line-height: 1.3rem;
+
+}
+::selection {
+    background: #cde2f3;
+    color: #000;
+    /* Safari */
+}
+::-moz-selection {
+    background: #cde2f3;
+    color: #000;
+    /* Firefox */
+}
+selection {
+    background: #cde2f3;
+    color: #000;
+}
+.logo{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+section{
+	width: 100%;
+	.center{
+		min-width: 1000px;
+		width: 1000px;
+		margin: 0 auto;
+	}
+}

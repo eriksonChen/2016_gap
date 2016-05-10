@@ -1,0 +1,25 @@
+<div class="logo" ng-hide="$state.includes('gap.activity') || $state.includes('gap.store') || $state.includes('gap.coupon')">
+    <a href="javascript:;" ng-click="logoBtn()"><img src="asset/svg/logo.svg" width="60" alt=""></a>
+</div>
+<div class="pop_cont" style="display:none;">
+    <!--pop領取優惠券-->
+    <div class="pop_coupon">
+        <a href="javascript:;" class="close" ng-click="closePop()"><img src="asset/svg/close.svg" width="25" alt=""></a>
+        <h2><p>盛放夏天</p>跟著Gap去旅行！</h2>
+        <h3>恭喜獲得盛夏優惠！分享再抽住宿大獎</h3>
+        <div class="coupon_box"><img src="img/coupon_25.jpg" alt="" ng-src="img/coupon_{{dollar}}.jpg"></div>
+        <a href="javascript:;" ng-click="getCoupon()" class="btn">盛夏優惠券GET!</a>
+    </div>
+    <div class="black"></div>
+</div>
+<div class="loading">
+    <img src="img/loading.gif" width="100" alt="">
+</div>
+<div class="turn">
+    <section><img src="img/turn.gif" width="150" alt="">
+        <p>請將手機擺直
+            <br> 以達到更佳的瀏覽體驗!
+        </p>
+    </section>
+</div>
+<div class="wrap" ui-view style="width: 100%; height: 100%;"></div>

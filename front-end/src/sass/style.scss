@@ -1,0 +1,976 @@
+// reset
+@import "compass/reset";
+// animate
+@import "animate";
+// font style
+@import "color";
+@import "typography";
+// layout
+@import "layout";
+// form
+@import "form";
+// mixin
+@import "mixin";
+// web style
+//首頁
+.index {
+    width: 100%;
+    height: 100%;
+    background: url(../img/kv.jpg) no-repeat top center;
+    background-size: cover;
+    ul {
+        padding-top: 15px;
+        padding-left: 15px;
+        li {
+            margin-bottom: 10px;
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.title {
+    position: absolute;
+    top: 81%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    img {
+        @include scale(0.6);
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+            @include scale(0.7);
+        }
+        @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+            @include scale(0.8);
+        }
+    }
+}
+
+.bottombtn {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 10%;
+    background-color: $darkblue;
+    color: $yellow;
+    text-align: center;
+    display: table;
+    text-decoration: none;
+    div {
+        display: table-cell;
+        vertical-align: middle;
+        letter-spacing: 2px;
+        p {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            margin-top: -6px;
+            width: 30px;
+            span.icon-arrow {
+                position: absolute;
+                font-size: 0.7rem;
+                @include animation(drop_right 2.5s infinite ease)
+            }
+        }
+        span.bold {
+            font-weight: 700;
+        }
+    }
+}
+
+//選擇頁
+.choose {
+    height: 100%;
+    background: url(../img/choose_bg.jpg) no-repeat top center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+    padding-top: 60px;
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        p {
+            padding-top: 15px;
+            font-weight: normal;
+            font-size: 1.2rem;
+            @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+                padding-top: 10px;
+            }
+        }
+    }
+    .b_1 {
+        @include btnstyle($blue, 125px, 125px, 0px, 5px);
+    }
+    .b_2 {
+        @include btnstyle($pink, 125px, 125px, 0px, 5px);
+    }
+    .b_3 {
+        @include btnstyle($yellow, 125px, 125px, 0px, 5px);
+    }
+    .b_4 {
+        @include btnstyle($skin, 125px, 125px, 0px, 5px);
+    }
+    .btn {
+        margin: 5px 3px;
+        vertical-align: top;
+        box-sizing: border-box;
+        padding-top: 15px;
+        line-height: 1rem;
+        @include btnstyle(null, 125px, 125px, 0px, 5px);
+        line-height: 1rem;
+        p {
+            font-size: 1.65em;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+            @include btnstyle(null, 140px, 140px, 0px, 5px);
+            line-height: 1rem;
+            padding-top: 20px;
+            p {
+                margin-top: 17px;
+            }
+        }
+        @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+            @include btnstyle(null, 150px, 150px, 0px, 5px);
+            line-height: 1rem;
+            padding-top: 23px;
+            p {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+//四大風格
+.topic {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    p.icon {
+        width: 15%;
+        img {
+            width: 100%;
+        }
+    }
+    p.word {
+        width: 25%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+a.arrow {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    font-size: 1.5rem;
+    z-index: 10;
+    @include animation(drop_right 2.5s infinite ease)
+}
+
+//四大主題
+.chill,
+.vibrant,
+.lively,
+.carefree {
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    position: relative;
+    line-height: 1rem;
+    p {
+        font-family: 'Noto Sans TC';
+        position: absolute;
+        font-weight: 300;
+        font-size: 0.8rem;
+        &::before,
+        &::after {
+            @extend %line;
+        }
+    }
+    .btns {
+        position: absolute;
+        bottom: 10px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        span {
+            padding-left: 10px;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+//沁涼
+.c_1 {
+    background: url(../img/chill_boy_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 10px;
+        top: 65%;
+        &::before {
+            top: -10px;
+            left: 15%;
+        }
+        &::after {
+            bottom: -15px;
+            left: 75%;
+        }
+    }
+}
+
+.c_2 {
+    background: url(../img/chill_boy_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 10%;
+        top: 20%;
+        &::before {
+            top: -10px;
+            left: 15%;
+        }
+        &::after {
+            bottom: -25px;
+            left: 60%;
+        }
+    }
+}
+
+.c_3 {
+    background: url(../img/chill_girl_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 10%;
+        top: 20%;
+        &::before {
+            top: -10px;
+            left: 5%;
+        }
+        &::after {
+            bottom: -26px;
+            left: 93%;
+        }
+    }
+}
+
+.c_4 {
+    background: url(../img/chill_girl_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 20%;
+        top: 13%;
+        &::before {
+            top: -5px;
+            left: 15%;
+        }
+        &::after {
+            bottom: -26px;
+            left: 60%;
+        }
+    }
+}
+
+.c_final {
+    background: url(../img/chill_style.jpg) no-repeat top center;
+    background-size: cover;
+    text-align: center;
+    .des {
+        font-weight: 300;
+        font-size: 0.9rem;
+        padding-top: 40%;
+        h2 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid $darkblue;
+            box-sizing: border-box;
+            padding-top: 10px;
+            margin: 0 auto 10px auto;
+            @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+                width: 90px;
+                height: 90px;
+                padding-top: 15px;
+            }
+            @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+                width: 100px;
+                height: 100px;
+                padding-top: 17px;
+            }
+            span {
+                display: block;
+                font-size: 0.8rem;
+                margin: 7px 0;
+            }
+        }
+    }
+}
+
+//閃耀
+.vibrant {
+    background-color: $pink;
+}
+
+.v_1 {
+    background: url(../img/vibrant_girl_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        left: 20px;
+        top: 60%;
+        &::before {
+            top: -5px;
+            left: 20%;
+        }
+        &::after {
+            bottom: -25px;
+            left: 61%;
+        }
+    }
+}
+
+.v_2 {
+    background: url(../img/vibrant_girl_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 45px;
+        top: 16%;
+        &::before {
+top: -6px;
+    left: 24%;
+        }
+        &::after {
+            bottom: -25px;
+            left: 61%;
+        }
+    }
+}
+
+.v_3 {
+    background: url(../img/vibrant_boy_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        left: 10px;
+        top: 60%;
+        &::before {
+    top: -6px;
+    left: 16%;
+        }
+        &::after {
+            bottom: -11px;
+    left: 70%;
+        }
+    }
+}
+
+.v_4 {
+    background: url(../img/vibrant_boy_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 30px;
+        top: 20%;
+        &::before {
+            top: -6px;
+            left: 20%;
+        }
+        &::after {
+            bottom: -26px;
+            left: 59%;
+        }
+    }
+}
+
+.v_final {
+    background: url(../img/vibrant_style.jpg) no-repeat top center;
+    background-size: cover;
+    text-align: center;
+    .des {
+        padding-top: 60%;
+        color: white;
+        font-weight: 300;
+        line-height: 1.2rem;
+        font-family: 'Noto Sans TC';
+        font-size: 1rem;
+        h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            span {
+                position: absolute;
+            }
+            span.an_1 {
+                top: -12px;
+                left: -10px;
+            }
+            span.an_2 {
+                top: -12px;
+                right: -10px;
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+                filter: FlipH;
+            }
+            span.an_3 {
+                bottom: -12px;
+                left: -10px;
+                -webkit-transform: scaleY(-1);
+                transform: scaleY(-1);
+                filter: FlipV;
+            }
+            span.an_4 {
+                bottom: -12px;
+                right: -10px;
+                -webkit-transform: scaleY(-1) scaleX(-1);
+                transform: scaleY(-1) scaleX(-1);
+                filter: FlipV FlipH;
+            }
+        }
+    }
+}
+
+//奔放
+.lively {
+    background-color: $yellow;
+}
+
+.li_1 {
+    background: url(../img/lively_boy_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        left: 13px;
+        top: 60%;
+        &::before {
+            top: -6px;
+            left: 12%;
+        }
+        &::after {
+            bottom: -27px;
+            left: 66%;
+        }
+    }
+}
+
+.li_2 {
+    background: url(../img/lively_boy_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 80px;
+        top: 10%;
+        &::before {
+               top: -6px;
+    left: 26%;
+        }
+        &::after {
+    bottom: -25px;
+    left: 66%;
+        }
+    }
+}
+
+.li_3 {
+    background: url(../img/lively_girl_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        left: 10px;
+        top: 70%;
+        &::before {
+            top: -6px;
+    left: 17%;
+        }
+        &::after {
+                bottom: -26px;
+    left: 69%;
+        }
+    }
+}
+
+.li_4 {
+    background: url(../img/lively_girl_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 75px;
+        top: 15%;
+        &::before {
+                top: -6px;
+    left: 26%;
+        }
+        &::after {
+            bottom: -27px;
+    left: 65%;
+        }
+    }
+}
+
+.li_final {
+    background: url(../img/lively_style.jpg) no-repeat top center;
+    background-size: cover;
+    text-align: center;
+    .des {
+        padding-top: 20%;
+        color: $darkblue;
+        font-weight: 300;
+        line-height: 1.4rem;
+        font-family: 'Noto Sans TC';
+        font-size: 0.9rem;
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            display: inline-block;
+            position: relative;
+            &::before {
+                content: " ";
+                display: table;
+                width: 15px;
+                height: 2px;
+                background-color: white;
+                transform: rotate(45deg);
+                position: absolute;
+                left: -17px;
+                top: 13px;
+            }
+            &::after {
+                content: " ";
+                display: table;
+                width: 15px;
+                height: 2px;
+                background-color: white;
+                transform: rotate(-45deg);
+                position: absolute;
+                right: -17px;
+                top: 13px;
+            }
+        }
+    }
+}
+
+//自在
+.carefree {
+    background-color: $skin;
+}
+
+.cf_1 {
+    background: url(../img/carefree_boy_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        left: 17px;
+    top: 72%;
+        &::before {
+            top: -8px;
+            left: 27%;
+        }
+        &::after {
+            bottom: -23px;
+            left: 67%;
+        }
+    }
+}
+
+.cf_2 {
+    background: url(../img/carefree_boy_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+            right: 80px;
+        top: 13%;
+        &::before {
+            top: -6px;
+            left: 27%;
+        }
+        &::after {
+            bottom: -25px;
+            left: 69%;
+        }
+    }
+}
+
+.cf_3 {
+    background: url(../img/carefree_girl_1.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+        right: 20px;
+        top: 70%;
+        &::before {
+            top: -8px;
+            left: 15%;
+        }
+        &::after {
+            bottom: -28px;
+            left: 77%;
+        }
+    }
+}
+.cf_4{
+    background: url(../img/carefree_girl_2.jpg) no-repeat top center;
+    background-size: cover;
+    p {
+            right: 53px;
+    top: 16%;
+
+        &::before {
+              top: -6px;
+    left: 30%;
+        }
+        &::after {
+               bottom: -27px;
+    left: 70%;
+        }
+    }
+}
+.cf_final {
+    background: url(../img/carefree_style.jpg) no-repeat top center;
+    background-size: cover;
+    text-align: center;
+    .des {
+    	color: white;
+    	font-weight: 300;
+    	text-align: center;
+    	padding-top: 35%;
+    	h2{
+    		display: inline-block;
+    		margin-bottom: 50px;
+    		position: relative;
+    		span{
+    			width: 25px;
+    			height: 25px;
+    			line-height: 25px;
+    			display: block;
+    			margin: 10px auto;
+    			border-radius: 50%;
+    			background-color: white;
+    			color: #e1b896;
+    		}
+    		&::after{
+    			content: " ";
+    			display: table;
+    			width: 1px;
+    			height: 30px;
+    			background-color: white;
+    			position: absolute;
+    			left: 50%;
+    			bottom: -40px;
+    			opacity: 0.7;
+    		}
+    	}
+    }
+}
+ul.day {
+    width: 200%;
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    li {
+        text-align: center;
+        display: inline-block;
+        margin-right: 20%;
+        position: relative;
+        &:last-child {
+            margin-right: 0;
+        }
+        span.icon {
+            color: white;
+            font-size: 1.2rem;
+        }
+        span.number {
+            font-family: 'Noto Sans TC';
+            font-weight: 100;
+            color: white;
+            font-size: 1.2rem;
+            &::before {
+                content: " ";
+                display: table;
+                width: 130px;
+                height: 1px;
+                background-color: white;
+                position: absolute;
+                top: 10px;
+                left: -125px;
+                vertical-align: top;
+                @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+                    width: 150px;
+                    top: 13px;
+                    left: -145px;
+                }
+                @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+                    width: 160px;
+                    top: 15px;
+                    left: -160px;
+                }
+            }
+        }
+        p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.btn_pink {
+    @include btnstyle($pink, 285px, 50px, 1px, 5px);
+    margin-bottom: 10px;
+}
+
+.btn_skin {
+    @include btnstyle($skin, 285px, 50px, 1px, 5px);
+}
+
+.btn_blue {
+    @include btnstyle($blue, 285px, 50px, 1px, 5px);
+    margin-bottom: 10px;
+}
+
+.btn_pink {
+    @include btnstyle($pink, 285px, 50px, 1px, 5px);
+}
+
+.btns {
+    a {
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+            @include btnstyle(null, 330px, 60px, 1px, 5px);
+        }
+        @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+            @include btnstyle(null, 360px, 70px, 1px, 5px);
+        }
+    }
+}
+
+//抽住宿
+.form {
+    height: 100%;
+    background: url(../img/prize_bg.jpg) no-repeat top center;
+    background-size: contain;
+    p {
+        padding: 20px 0 0 15px;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 30%;
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+            margin-bottom: 45%;
+        }
+        @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+            margin-bottom: 47%;
+        }
+        span {
+            font-weight: 700;
+        }
+    }
+    .data {
+        width: 90%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.8);
+        font-size: 0;
+        padding-top: 20px;
+        text-align: center;
+        span,
+        input {
+            height: 30px;
+            margin-bottom: 10px;
+            line-height: 30px;
+        }
+        span {
+            color: #f1a3a1;
+            width: 23%;
+            display: inline-block;
+            font-size: 1rem;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        input {
+            width: 60%;
+            border: 1px solid #f1a3a1;
+            border-radius: 5px;
+        }
+        .agree {
+            width: 85%;
+            margin: 0 auto;
+            color: #666;
+            font-size: 0.8rem;
+            input.checkbox {
+                border: 1px solid #999;
+                width: 18px;
+                height: 18px;
+            }
+        }
+        a.btn {
+            margin-top: 20px;
+            font-size: 1rem;
+            @include btnstyle($pink, 150px, 50px, 1px, 5px);
+        }
+    }
+}
+
+//下載
+.download {
+    height: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+    img {
+        width: 100%;
+    }
+}
+
+a.fb {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    letter-spacing: 2px;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: #4862a3;
+    text-align: center;
+    text-decoration: none;
+    line-height: 60px;
+    span {
+        margin-right: 5px;
+        font-size: 1rem;
+    }
+}
+
+//活動辦法
+.activity {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 50px;
+    h1,
+    h2 {
+        color: #e9af78;
+    }
+    h1 {
+        font-size: 2.3rem;
+        font-weight: 800;
+    }
+    h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    article {
+        width: 88%;
+        margin: 30px auto;
+        text-align: left;
+        line-height: 1.7rem;
+        color: #666;
+        text-align: justify;
+        text-justify:inter-ideograph;
+        word-wrap: break-word;
+        a {
+            color: #666;
+        }
+        p.first {
+            color: #e9af78;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 30px 0 5px 0;
+        }
+        p.second {
+            color: $yellow;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 10px 0 0 0;
+        }
+        ul {
+            margin-left: 25px;
+            li {
+                list-style: decimal;
+            }
+        }
+        .prize {
+            h3 {
+                color: $pink;
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin: 10px 0;
+            }
+            p {
+                margin: 0 0 15px 0;
+                @extend %clearfix;
+                span {
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    border: 2px solid $pink;
+                    background-color: white;
+                    text-align: center;
+                    line-height: 60px;
+                    color: $pink;
+                    font-weight: 500;
+                    float: left;
+                    margin-right: 10px;
+                    margin-top: -5px;
+                }
+            }
+        }
+    }
+    a.back {
+        @include btnstyle($skin, 65%, 60px, 1px, 5px);
+        margin-bottom: 50px;
+    }
+    a.close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+//門市資訊
+.store {
+    ul.tab {
+        margin: 30px 0;
+        li {
+            display: inline-block;
+            margin-right: 70px;
+            position: relative;
+            &:after {
+                content: " ";
+                display: table;
+                width: 50px;
+                height: 2px;
+                background-color: $skin;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -60px;
+            }
+            &:last-child {
+                margin-right: 0px;
+                &:after {
+                    display: none;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: #ebd67c;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+        }
+    }
+    .store_block {
+        width: 90%;
+        margin: 40px auto 40px auto;
+        img {
+            width: 100%;
+        }
+        p.storename {
+            color: #ead57e;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        span {
+            color: #666;
+        }
+    }
+}

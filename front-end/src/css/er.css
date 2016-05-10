@@ -1,0 +1,35 @@
+.chill, .lively, .vibrant, .carefree{
+  float: left;
+  display: inline-block;
+}
+
+.wrap .page_cont{
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow-y: hidden;
+}
+
+.wrap{
+	overflow-x: hidden;
+	position: absolute;
+}
+
+.loading{
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 10000;
+}
+
+.turn{
+	position: fixed;
+	z-index: 10001;
+	/*display: none;*/
+}
+
+body{
+	-webkit-overflow-scrolling:touch;
+}

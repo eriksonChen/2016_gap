@@ -1,0 +1,40 @@
+//按鈕
+@mixin btnstyle($color, $btnwith, $btnheight, $btnborder, $btnradius) {
+    background-color: $color;
+    width: $btnwith;
+    height: $btnheight;
+    border: $btnborder;
+    display: inline-block;
+    border-radius: $btnradius;
+    line-height: $btnheight;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-color: white;
+    border-style: solid;
+}
+
+@mixin scale($scale) {
+    -webkit-transform: scale($scale);
+    transform: scale($scale);
+}
+
+%line {
+    content: " ";
+    display: table;
+    width: 30px;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    transform: rotate(45deg) translateX(-50%);
+}
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

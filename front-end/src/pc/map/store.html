@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link href="../css/reset.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
+<script type="text/javascript">
+	//經緯度可從 http://www.mygeoposition.com/ 取得
+	lat = 25.0356660; //緯度
+	lng = 121.5660750; //經度
+	function initialize() {
+		var latlng = new google.maps.LatLng(lat, lng);
+		//zoom 參數可控制地圖預設縮放大小
+		var settings = {
+			zoom: 16,
+			center: latlng,
+			mapTypeControl: false,
+			mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+			navigationControl: false,
+			navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			scaleControl: false,
+			panControl: false,
+			zoomControl: false
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"), settings);
+		//google.maps.Size = logo.png 圖片尺寸
+		//google.maps.Point = logo.png 錨點位置 (尖端部份)
+		var companyLogo = new google.maps.MarkerImage('../img/32.jpg',
+			new google.maps.Size(32,32),
+			new google.maps.Point(0,0),
+			new google.maps.Point(16,16)
+		);
+		var companyPos = new google.maps.LatLng(lat, lng);
+		//title = 滑鼠游標停在 logo.png 時出現的說明文字
+		var companyMarker = new google.maps.Marker({
+			position: companyPos,
+			map: map,
+			icon: companyLogo,
+			title:"GAP"
+		});
+	}
+</script>
+</head>
+<body onload="initialize()">
+	<div id="map_canvas" style="width:420px; height:360px"></div>
+</body>
+</html>
