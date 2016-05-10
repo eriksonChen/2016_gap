@@ -43,6 +43,12 @@ API                                       | [/ api-doc](http://git.webgene.tw/we
 > 
 > 密碼: `tAbrdW4eU3`
 
+## 後台帳密
+> 連結: `gaptaiwan.com.tw/longlivesummer/admin/login.php`
+> 
+> 帳號: `webgene`
+> 
+> 密碼: `87682550`
 
 ## Front-End Build Workflow
 
