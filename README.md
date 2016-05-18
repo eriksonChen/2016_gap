@@ -27,7 +27,6 @@ Gap 抽獎活動，手機版有做抽獎跟留資料的功能，pc版只有資�
 
 
 ## Source List
-
 項目                                       | folder
 ------------------------------------------|-----------
 API                                       | [/ api-doc](http://git.webgene.tw/webgene/2016-gap-LongLivesSummer/tree/master/doc/api.md)
