@@ -114,6 +114,7 @@ gulp.task('watch', ['copyAll', 'webpack', 'webpack_PC', 'connect'], function() {
     gulp.watch('src/asset/**/*', ['copySVG']);
     gulp.watch('src/img/**/*', ['copyImg']);
     gulp.watch('src/js/vendor/**/*', ['copyVendor']);
+    gulp.watch('src/js/ga.js', ['copyGa']);
     gulp.watch('src/css/**/*', ['copyCSS']);
     gulp.watch('src/fonts/**/*', ['copyFont']);
     gulp.watch('src/template/**/*', ['copyTemplate']);
@@ -257,7 +258,7 @@ gulp.task('clear', function(done) {
 //////////////////////////////////////////////////////////////
 // Minify Img & SVG & vendor JS & CSS & font
 //////////////////////////////////////////////////////////////
-gulp.task('copyAll', ['copySVG', 'copyImg', 'copyVendor', 'copyCSS', 'copyFont', 'copyTemplate', 'copyHtml','copySVG_PC', 'copyImg_PC', 'copyVendor_PC', 'copyCSS_PC', 'copyFont_PC', 'copyMap_PC', 'copyHtml_PC'], function(callback) {
+gulp.task('copyAll', ['copySVG', 'copyImg', 'copyVendor', 'copyGa', 'copyCSS', 'copyFont', 'copyTemplate', 'copyHtml','copySVG_PC', 'copyImg_PC', 'copyVendor_PC', 'copyCSS_PC', 'copyFont_PC', 'copyMap_PC', 'copyHtml_PC'], function(callback) {
     callback();
 });
 gulp.task('copySVG', [], function() {
@@ -306,6 +307,14 @@ gulp.task('copyVendor', [], function() {
             errorHandler: onError
         }))
         .pipe(gulp.dest('build/js/vendor'))
+        .pipe($.connect.reload());
+});
+gulp.task('copyGa', [], function() {
+    return gulp.src(['src/js/ga.js'])
+        .pipe($.plumber({
+            errorHandler: onError
+        }))
+        .pipe(gulp.dest('build/js'))
         .pipe($.connect.reload());
 });
 gulp.task('copyVendor_PC', [], function() {
